@@ -190,7 +190,7 @@ int BST<T>::height(TreeNode<T>* root)
 	current = root;
 	
         if (current == nullptr) {
-                return 0;
+                return -1;
         }
 
 	int leftHeight = height(current->left);
