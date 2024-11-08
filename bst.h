@@ -186,14 +186,45 @@ int BST < T >::height()
 template<typename T>
 int BST<T>::height(TreeNode<T>* root)
 {
- // Implement this method
-  return 1;
-  //dummy statement above satisfy returning a value
+	TreeNode<T>* current;
+	current = root;
+	
+        if (current == nullptr) {
+                return 0;
+        }
+
+	int leftHeight = height(current->left);
+	int rightHeight = height(current->right);
+
+	if (leftHeight > rightHeight) {
+		return leftHeight + 1;
+	}
+	else {
+		return rightHeight + 1;
+	}
 }
 
+template < typename T >
+int BST<T>::getNumberOfNonLeaves()
+{
+	return getNumberOfNonLeaves(root);
+}
 
-//Implement the getNumberOfNonLeaves() method here
-// Two methods (overloaded) to be implemented.
+template < typename T >
+int BST<T>::getNumberOfNonLeaves(TreeNode<T>* root)
+{
+	TreeNode<T>* current;
+	current = root;
+	if (current == nullptr) {
+		return 0;
+	}
+	if (current->left == nullptr && current->right == nullptr) {
+		return 0;
+	}
+	else {
+		return 1 + getNumberOfNonLeaves(current->left) + getNumberOfNonLeaves(current->right);
+	}
+}
 
 
 

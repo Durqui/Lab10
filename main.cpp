@@ -28,10 +28,8 @@ int main()
 	cout << "The preorder traversal for tree2 is ";
 	tree2.preorder();
 	cout << "\nThe height of tree2 is " << tree2.height() << endl;
-	//Uncomment this when your getNumberOfNonLeaves() method works.
-	//cout << "\nNumber of non-leaves nodes in tree1: " <<
-	tree1.getNumberOfNonLeaves() << endl;
-	//cout << "Number of non-leaves nodes in tree2: " << tree2.getNumberOfNonLeaves()
-	<< endl;
+	
+	cout << "\nNumber of non-leaves nodes in tree1: " << tree1.getNumberOfNonLeaves() << endl;
+	cout << "Number of non-leaves nodes in tree2: " << tree2.getNumberOfNonLeaves() << endl;
 	return 0;
 }
